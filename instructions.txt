@@ -1,0 +1,51 @@
+1 
+Step 1
+Build the hardware:
+
+- Make/order the DSI Shield PCB.
+
+- Solder it!
+
+- Check the BOM, as not all components should be mounted.
+
+- Make/order/design an adapter board for your screen.
+
+- Connect the two boards together with the LCD. Power the system through USB.
+
+- No smoke indicates probable success.
+
+2 
+Step 2
+Clone the repository:
+
+git clone https://github.com/twlostow/dsi-shield
+Install an LM32 toolchain. You may find one on Lattice website. There's a pre-built version for Linux (IA32) available here.
+
+Download and install Xilinx ISE 14.7 Webpack from Xilinx website.
+
+3 
+Step 3
+Build the software:
+
+- edit software/rev1/panels.h and set the panel type you wish to use.
+
+$ cd software
+$ make
+This will produce the boot.ram file that the synthesizer will embed in the FPGA bitstream. The file contains both the panel initialization/HDMI handling code and the bootloader, so the LM32 application can be re-loaded at any time via USB UART.
+
+4 
+Step 4
+Build the FPGA bitstream:
+
+Open hdl/top/rev1_top.vhd and edit the PLL configuration genrics to match your LCD panel. See Table 1 above the VHDL entity declaration for the values.
+
+cd hdl/syn/rev1; ise rev1.xise
+Click Generate Programming File.
+
+After a while, you'll get the bitstream: rev1_top.bit.
+
+Program the SPI flash with the bitstream through JTAG.
+
+5 
+Step 5
+Power-cycle the board. A test screen with the panel info and "No HDMI signal" message should appear. If it doesn't... well, something's wrong. Otherwise, connect the HDMI input. If everything is OK, the PC should detect the display resolution and automatically configure it.
