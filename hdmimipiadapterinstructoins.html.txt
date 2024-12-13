@@ -1,0 +1,857 @@
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    
+    
+
+<title>Instructions | MIPI DSI Display Shield/HDMI Adapter | Hackaday.io</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#333333">
+<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="//cdn.hackaday.io/css/style.css?version=0.172.1" />
+<script type="text/javascript" src="//use.typekit.net/ymb0lgk.js"></script>
+<script type="text/javascript">try{Typekit.load({ async: true });}catch(e){}</script>
+
+        <script type="text/javascript">
+        function getCommentIdFromUrl() {
+            if(window.location.hash) {
+                var hash = window.location.hash.substring(1);
+                var commentId = parseInt(hash.replace('j-discussion-', ''));
+                if (commentId) {
+                    return commentId;
+                }
+            }
+            return null;
+        }
+
+        var commentId = getCommentIdFromUrl();
+        if (commentId) {
+            var url = window.location.href;
+            if (url.indexOf('?') > -1) {
+                url = url.substring(0, url.indexOf('?'));
+            }
+            if (url.indexOf('#') > -1) {
+                url = url.substring(0, url.indexOf('#'));
+            }
+            url += '/discussion-' + commentId;
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    
+
+<div class="header hfr-has-background-black" id="header">
+    
+    <div class="hfr-container hfr-is-max-widescreen">
+        <nav class="hfr-navbar" role="navigation" aria-label="main navigation">
+            <div class="hfr-navbar-brand">
+                <a href="/" title="Hackaday.io" class="hfr-navbar-item logo">
+                    <img src="/img/logo-squares.png" width="33px" height="23px" alt="Hackaday.io" class="hfr-is-hidden-touch hfr-is-hidden-widescreen">
+                    <img src="/img/hackaday-logo.svg" width="138px" height="17px" alt="Hackaday.io" class="hfr-is-hidden-desktop-only">
+                </a>
+                <a role="button" class="hfr-navbar-burger hfr-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div class="hfr-navbar-menu">
+                <div class="hfr-navbar-start">
+                    <div class="hfr-navbar-item hfr-has-dropdown hfr-is-hoverable">
+                        
+                            <a href="/projects" class="hfr-navbar-item hfr-is-family-secondary ">Projects</a>
+                        
+                    </div>
+                    <a href="/discover" class="hfr-navbar-item hfr-is-family-secondary ">Discover</a>
+                    <a href="/contests" class="hfr-navbar-item hfr-is-family-secondary ">Contests</a>
+                    <a href="/courses" class="hfr-navbar-item hfr-is-family-secondary hfr-is-hidden-desktop-only ">Courses</a>
+                    <a href="/stack" class="hfr-navbar-item hfr-is-family-secondary ">Stack</a>
+                    <div class="hfr-navbar-item hfr-has-dropdown hfr-is-hoverable">
+                        <a class="hfr-navbar-link hfr-is-arrowless hfr-is-family-secondary">More 
+
+
+
+
+    <div class="icon hfr-icon hfr-ml-3 hfr-has-text-grey hfr-is-hidden-touch">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="m8 9.702 4.79-4.79a.707.707 0 1 1 1 .999l-5.14 5.14a.705.705 0 0 1-.652.197.712.712 0 0 1-.646-.196l-5.14-5.14a.703.703 0 0 1-.004-1.002.708.708 0 0 1 1.003.004L8 9.702z" fill-rule="evenodd"/></svg>
+        
+    </div>
+
+</a>
+                        <div class="hfr-navbar-dropdown">
+                            <a href="/courses" class="hfr-navbar-item hfr-is-hidden-touch hfr-is-hidden-widescreen">Courses</a>
+                            <a href="/list/159729" class="hfr-navbar-item">Tutorials</a>
+                            <a href="/events" class="hfr-navbar-item">Events</a>
+                            <a href="/hackerspaces" class="hfr-navbar-item">Hackerspaces</a>
+                            
+                            <a href="https://hackaday.com/" target="_blank" rel="noopener noreferrer" class="hfr-navbar-item">Hackaday.com</a>
+                            <a href="https://www.tindie.com/" target="_blank" rel="noopener noreferrer" class="hfr-navbar-item j-store-tracking">Tindie Marketplace</a>
+                        </div>
+                    </div>
+                    <div class="hfr-navbar-item nav search-holder" style="border-left: 1px solid #272727;">
+                        
+<form id="search-form" class="hfr-field hfr-has-addons" action="/search" onsubmit="return submitSearch();" method="GET">
+    <div class="hfr-control">
+        <input type="text" placeholder="Find projects and more" name="term" class="hfr-input hfr-is-static j-add-search t-input-search" id="add-search" value="" autocomplete="off" pattern=".{2,}" required title="Two characters minimum"  />
+    </div>
+    <div class="control">
+        <button type="submit" class="hfr-button button-search" title="Search">
+            
+
+
+
+
+    <div class="icon hfr-icon hfr-is-medium">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.542 9.368a4.547 4.547 0 1 0-1.015 1.079c.04.086.094.166.165.237l2.727 2.727a.8.8 0 0 0 1.137.006.801.801 0 0 0-.006-1.136l-2.726-2.727a.812.812 0 0 0-.282-.185zm-1.72-.473a2.91 2.91 0 1 0-4.114-4.116 2.91 2.91 0 0 0 4.114 4.117z" fill-rule="evenodd"/></svg>
+        
+    </div>
+
+
+        </button>
+    </div>
+</form>
+
+                    </div>
+                </div>
+
+                
+                    <div class="hfr-navbar-end">
+                        <div class="hfr-navbar-item">
+                            <div class="hfr-buttons">
+                                <a href="/signup" class="hfr-button hfr-is-primary hfr-is-outlined">Sign up</a>
+                                <a href="/signin?returnUrl=%2Fproject%2F364%2Finstructions" class="hfr-button hfr-is-text">Log in</a>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div id="topMessage" class="alert small hide">
+    <span class="j-top-content"></span>
+    <a
+        href="javascript:void(0);"
+        class="alert-close j-top-message-close"
+        title="Close"
+    >
+        
+
+
+
+
+    <div class="icon icon-close-circle">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M10.047 10.658a.562.562 0 0 1-.398-.165L7.984 8.828 6.32 10.493a.562.562 0 0 1-.961-.398.56.56 0 0 1 .164-.398L7.19 8.033 5.523 6.368a.561.561 0 1 1 .795-.796l1.665 1.665L9.65 5.572a.563.563 0 0 1 .795.796L8.78 8.033l1.665 1.664a.562.562 0 0 1-.398.961zm-2.062-7.5a4.875 4.875 0 1 0 .002 9.75 4.875 4.875 0 0 0-.004-9.75zm0 10.875a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" fill-rule="evenodd"/></svg>
+        
+    </div>
+
+ Close
+    </a>
+</div>
+
+
+
+
+<script>
+    var HIO = HIO || {};
+</script>
+    
+
+<div class="project-header-menu">
+    <div class="container">
+
+        <div class="project-details">
+
+            <h1><a href="/project/364-mipi-dsi-display-shieldhdmi-adapter">MIPI DSI Display Shield/HDMI Adapter</a></h1>
+            <p class="description-title"><a href="/project/364">Back to overview</a></p>
+            <p class="description-summary">A controller for LCD/OLED screens with MIPI DSI interface. Arduino shield format, HDMI-to-DSI adapter &amp; built-in framebuffer.</p>
+
+            <div class="description-metainfo">
+                <span class="identity-card" data-id="1867"><a href="/twl"><img     src="https://cdn.hackaday.io/images/resize/24x24/3684411501617616450.png"     alt="twl" />twl</a></span> <!--&bull;
+                <span class='time-card' style='margin: 0' title='11 years ago'>03/10/2014 at 14:34</span>-->
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="project-menu-holder">
+        <ul class="project-menu container">
+            <li>
+                <a href="/project/364-mipi-dsi-display-shieldhdmi-adapter">Back to overview</a>
+            </li>
+            <li class="">
+                
+                    Files <span>0</span>
+                
+            </li>
+            <li class="">
+                
+                
+                    <a href="/project/364/components">Components <span>11</span></a>
+                
+            </li>
+            <li class=" hfr-is-capitalized">
+                
+                    <a href="/project/364/logs">
+                        logs <span>8</span>
+                    </a>
+                
+            </li>
+            <li class="active">
+                
+                    <a href="/project/364/instructions">
+                        Instructions <span>5</span>
+                    </a>
+                
+            </li>
+            <li>
+                
+                    <a href="/project/364-mipi-dsi-display-shieldhdmi-adapter#j-discussions-title">
+                        Discussion <span>214</span>
+                    </a>
+                
+            </li>
+        </ul>
+    </div>
+</div>
+    
+
+<div class="container post-content">
+    
+        
+        <ul class="section-instructions-list">
+            
+                <li>
+                    <div class="instruction-step">
+                        <div class="instruction-number-box">
+                            <div class="instruction-number">1</div>
+                        </div>
+                        <div class="instruction-content-box">
+                            <div class="instruction-list-title">Step 1</div>
+                            <div class="instruction-list-item"><p>Build the hardware:</p><p>- Make/order the DSI Shield PCB.</p><p>- Solder it!</p><p>- Check the BOM, as not all components should be mounted.</p><p>- Make/order/design an adapter board for your screen.</p><p>- Connect the two boards together with the LCD. Power the system through USB.</p><p>- No smoke indicates probable success.</p></div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="instruction-step">
+                        <div class="instruction-number-box">
+                            <div class="instruction-number">2</div>
+                        </div>
+                        <div class="instruction-content-box">
+                            <div class="instruction-list-title">Step 2</div>
+                            <div class="instruction-list-item"><p>Clone the repository:</p><pre>git clone https://github.com/twlostow/dsi-shield</pre><p>Install an LM32 toolchain. You may find one on Lattice website. There's a pre-built version for Linux (IA32) available <a href="http://www.ohwr.org/attachments/download/1133/lm32.tar.xz" target="_blank">here.</a></p><p>Download and install Xilinx ISE 14.7 Webpack from Xilinx website.<br><a href="http://www.ohwr.org/attachments/download/1133/lm32.tar.xz" target="_blank"></a></p></div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="instruction-step">
+                        <div class="instruction-number-box">
+                            <div class="instruction-number">3</div>
+                        </div>
+                        <div class="instruction-content-box">
+                            <div class="instruction-list-title">Step 3</div>
+                            <div class="instruction-list-item"><p>Build the software:</p><p>- edit software/rev1/panels.h and set the panel type you wish to use.</p><pre>$ cd software</pre>
+<pre>$ make</pre><p>This will produce the boot.ram file that the synthesizer will embed in the FPGA bitstream. The file contains both the panel initialization/HDMI handling code and the bootloader, so the LM32 application can be re-loaded at any time via USB UART.</p></div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="instruction-step">
+                        <div class="instruction-number-box">
+                            <div class="instruction-number">4</div>
+                        </div>
+                        <div class="instruction-content-box">
+                            <div class="instruction-list-title">Step 4</div>
+                            <div class="instruction-list-item"><p>Build the FPGA bitstream:</p><p>Open hdl/top/rev1_top.vhd and edit the PLL configuration genrics to match your LCD panel. See Table 1 above the VHDL entity declaration for the values.</p><pre>cd hdl/syn/rev1; ise rev1.xise</pre><p>Click <em>Generate Programming File.</em></p><p>After a while, you'll get the bitstream: <strong>rev1_top.bit</strong>.</p><p>Program the SPI flash with the bitstream through JTAG.</p></div>
+                        </div>
+                    </div>
+                </li>
+            
+                <li>
+                    <div class="instruction-step">
+                        <div class="instruction-number-box">
+                            <div class="instruction-number">5</div>
+                        </div>
+                        <div class="instruction-content-box">
+                            <div class="instruction-list-title">Step 5</div>
+                            <div class="instruction-list-item"><p>Power-cycle the board. A test screen with the panel info and "No HDMI signal" message should appear. If it doesn't... well, something's wrong. Otherwise, connect the HDMI input. If everything is OK, the PC should detect the display resolution and automatically configure it.</p></div>
+                        </div>
+                    </div>
+                </li>
+            
+        </ul>
+        
+    
+    
+</div>
+
+
+    <div class="container post-content post-comments">
+        <section class="section last">
+    <h2 id="j-discussions-title" class="section-title">Discussions</h2>
+
+    <form id="j-discussion-add-top" action="/discussions/add" name="add-comment" method="POST" class="skip-global-form discussion-form j-discussion-add hide">
+
+        <textarea placeholder="Add your comment" name="comment" class="redactor-comment textarea-field"></textarea>
+
+        <div class="error-message alert-danger hide" id="addCommentErrorMessageTop"></div>
+
+        <input type="hidden" name="categoryId" value="364" />
+        <input type="hidden" name="category" value="instruction" />
+        <input type="hidden" name="_csrf" value="5C4LyWZw-HjU5ZSYXm5M36zHMzPH6UNzEWkE" />
+        <input type="hidden" name="replyTo" value="0" />
+
+        <input type="submit" class="button-grey-gold-medium" value="Post comment" />
+    </form>
+
+    <div id="discussion-list" class="discussion-list">
+        
+<p>
+    <div class="signup-holder textarea-holder">
+        <textarea placeholder="Log In or become a member to leave your comment" name="comment" class="editable input-comment"></textarea>
+    </div>
+    <a href="#" class="button-grey-gold-small login-comment login-button">Log In/Sign up to comment</a>
+</p>
+<div class="modal-content-holder onboarding-modal login-modal" id="login-modal">
+        <div class="onboarding-signup">
+        <div class="onboarding-top">
+    <div class="submissions-close modal-close">
+        
+
+
+
+
+    <div class="icon icon-close">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 6.99 4.767 3.76a.714.714 0 1 0-1.01 1.01L6.992 8 3.76 11.233a.714.714 0 1 0 1.01 1.01L8 9.008l3.233 3.232a.714.714 0 1 0 1.01-1.01L9.008 8l3.232-3.233a.714.714 0 1 0-1.01-1.01L8 6.992z" fill-rule="evenodd"/></svg>
+        
+    </div>
+
+
+    </div>
+
+    <div class="onboarding-holder">
+        <div class="headline">
+            <h1 class="title text-center">
+                Become a  Hackaday.io Member
+            </h1>
+            <p class="text-center">
+                <span>Create an account to leave a comment.</span>
+                <span>Already have an account?</span>
+                <a href="/signin" class="should-link">Log In</a>.
+            </p>
+        </div>
+        <div class="onboarding-content signin-holder">
+            <div class="signin-left">
+                <a href="/auth/github" class="sign-in-with-github-button button j-dialog-auth-window">
+                    
+
+
+
+
+    <div class="icon icon-github--signin">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.643 7.513c-.158-.45-.228-.967-.228-1.543 0-1.024.33-1.41.77-1.955-.337-1.167.122-1.965.122-1.965s.71-.142 2.05.79c.728-.303 2.666-.328 3.584-.068.563-.36 1.593-.873 2.008-.73.113.176.355.688.147 1.813.14.247.874.772.877 2.258-.012.548-.07 1.01-.18 1.402.02 0-.14.485-.177.484C12.13 9.034 11.13 9.42 9.52 9.58c.522.32.672.72.672 1.802 0 1.083-.015 1.23-.012 1.478.006.408.623.604.6.736-.023.13-.517.11-.747.032-.654-.22-.588-.75-.588-.75l-.022-1.447s.044-.78-.253-.78v2.37c0 .516.372.672.372.863 0 .327-.68-.03-.888-.235-.32-.31-.283-.97-.275-1.49.006-.502-.006-1.603-.006-1.603l-.216.005s.088 2.403-.114 2.84c-.263.563-1.054.757-1.054.5 0-.172.194-.117.302-.503.093-.33.06-2.78.06-2.78s-.253.146-.253.605c0 .21-.007 1.41-.007 1.767 0 .45-.657.705-.973.705-.16 0-.36-.008-.36-.09 0-.208.602-.33.602-.762 0-.375-.008-1.34-.008-1.34s-.304.052-.736.052c-1.09 0-1.435-.675-1.6-1.053a1.859 1.859 0 0 0-.784-.908c-.18-.113-.222-.247-.013-.285.966-.175 1.212 1.063 1.857 1.26.46.14 1.052.08 1.346-.105.04-.378.32-.705.554-.877-1.64-.153-2.612-.705-3.116-1.593-.005 0-.236-.482-.217-.482z" fill-rule="evenodd"/></svg>
+        
+    </div>
+
+
+                    <span>Sign up with Github</span>
+                </a>
+                <a href="/auth/twitter" class="sign-in-with-twitter-button button j-dialog-auth-window">
+                    
+
+
+
+
+    <div class="icon icon-twitter--signin">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="m9.1 7.1 4.3-4.9h-1L8.7 6.4l-3-4.2H2.3l4.5 6.4-4.5 5.1h1l3.9-4.5 3.1 4.5h3.4M3.7 3h1.6l7.2 10h-1.6"/></svg>
+        
+    </div>
+
+
+                    <span>Sign up with X</span>
+                </a>
+                <span class="or-separator">OR</span>
+            </div>
+                
+            <div class="signin-right">
+                <form id="onboarding-ga" action="/signupfast" method="POST">
+                <input type="text" class="input-field" placeholder="Enter your email address" required name="email"  />
+                <input type="password" class="input-field" placeholder="Pick a secure password" required name="password"  />
+                
+                <input id="captchaInput" type="text" class="input-field onboarding-modal-captcha" placeholder="Enter captcha" name="captcha" autocomplete="new-password" style="width: -webkit-calc(100% - 115px);"/>
+                <img src="/captcha.jpg#1734121750380" id="captchaUrl" style="vertical-align: middle;" class="onboarding-modal-captcha"/>
+                <input type="hidden" name="okay_to_redirect" value="true" />
+
+                <input type="hidden" name="source" value="/user : alternate modal" />
+                <button class="gold-gold-button button-signin" type="submit">Sign up</button>
+                <input type="hidden" name="_csrf" value="5C4LyWZw-HjU5ZSYXm5M36zHMzPH6UNzEWkE" />
+                <input 
+                    type="hidden" 
+                    class="input-field" 
+                    placeholder="Invitation Code" 
+                    required name="invitation_code"
+                    value="5Ad0ix2-b96J"
+                />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+</div>
+
+
+
+
+
+    
+    
+
+    <div id="j-discussion-108153" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="/hacker/318771">
+                <img src="https://cdn.hackaday.io/images/resize/100x100/7947211527456711967.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="318771"><a href="/hacker/318771-toferzim">toferzim</a></span>
+
+                wrote <a class="gray-link" href="/project/364/instructions/discussion-108153"><span class='time-card' style='margin: 0' title='7 years ago'>05/27/2018 at 22:17</span></a>
+
+                <span id="comment-points-holder-108153" class="hide">
+                    &bull; <span id="comment-points-108153">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-108153-content">
+                    <p>Hello! Where can I get the PCB design? Can I flash it with Arduino as a programmer? </p>
+                </div>
+                <p id="comment-108153-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-108153">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-72000" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="/hacker/171306">
+                <img src="https://cdn.hackaday.io/images/resize/100x100/916911501714991810.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="171306"><a href="/hacker/171306-djon">Djon</a></span>
+
+                wrote <a class="gray-link" href="/project/364/instructions/discussion-72000"><span class='time-card' style='margin: 0' title='8 years ago'>12/17/2016 at 16:59</span></a>
+
+                <span id="comment-points-holder-72000" class="hide">
+                    &bull; <span id="comment-points-72000">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-72000-content">
+                    <p>I can not generate rev1.xise firmware, somebody did it? Thank you!</p>
+                </div>
+                <p id="comment-72000-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-72000">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-71950" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="/hacker/171306">
+                <img src="https://cdn.hackaday.io/images/resize/100x100/916911501714991810.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="171306"><a href="/hacker/171306-djon">Djon</a></span>
+
+                wrote <a class="gray-link" href="/project/364/instructions/discussion-71950"><span class='time-card' style='margin: 0' title='8 years ago'>12/16/2016 at 16:05</span></a>
+
+                <span id="comment-points-holder-71950" class="hide">
+                    &bull; <span id="comment-points-71950">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-71950-content">
+                    <p>Hello everybody! Does anyone have any ready rev1_top.bit file?</p>
+                </div>
+                <p id="comment-71950-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-71950">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-46587" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="/hacker/117406">
+                <img src="https://cdn.hackaday.io/images/resize/100x100/default-avatar.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="117406"><a href="/hacker/117406-freezingcold">Freezingcold</a></span>
+
+                wrote <a class="gray-link" href="/project/364/instructions/discussion-46587"><span class='time-card' style='margin: 0' title='9 years ago'>02/01/2016 at 03:37</span></a>
+
+                <span id="comment-points-holder-46587" class="hide">
+                    &bull; <span id="comment-points-46587">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-46587-content">
+                    <p>I need to buy one of these ready built and that would be amazing. But not as amazing as building the thing in the first place.&#xA0;</p><p>I need to build a portable 1080p monitor 5&quot; preferably. E980 looks perfect to use.&#xA0;</p><p>Think I need help don&apos;t I need hot air &#xA0;soldering iron for these size of components?&#xA0;</p>
+                </div>
+                <p id="comment-46587-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-46587">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-22228" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="/hacker/62092">
+                <img src="https://cdn.hackaday.io/images/resize/100x100/9499531501712934900.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="62092"><a href="/hacker/62092-5ydc">5ydc</a></span>
+
+                wrote <a class="gray-link" href="/project/364/instructions/discussion-22228"><span class='time-card' style='margin: 0' title='10 years ago'>04/13/2015 at 10:59</span></a>
+
+                <span id="comment-points-holder-22228" class="hide">
+                    &bull; <span id="comment-points-22228">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-22228-content">
+                    <p>How can i order full project hardware? Cuz my circumstance does not allow me to build it!&nbsp;</p>
+                </div>
+                <p id="comment-22228-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-22228">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-19583" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="/hacker/31224">
+                <img src="https://cdn.hackaday.io/images/resize/100x100/3452791501634228417.jpeg" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="31224"><a href="/hacker/31224-gonzalo">Gonzalo</a></span>
+
+                wrote <a class="gray-link" href="/project/364/instructions/discussion-19583"><span class='time-card' style='margin: 0' title='10 years ago'>03/08/2015 at 15:28</span></a>
+
+                <span id="comment-points-holder-19583" class="hide">
+                    &bull; <span id="comment-points-19583">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-19583-content">
+                    <p>I love your project. I want to know more about this project so I want to know if I can ask more. I want to take this project as reference about how to implement FPGA real application interface, you should work at hardware because what you did is not easy at all. So it's really a study case. Great work!</p><p>I would love to interface the same way with a mobile camera module. I'm reading that Raspberry PI has a DSI and CSI2 (Camera Serial Interface), so it should be possible to connect it to a Display without using HDMI, I mean directly with the ribbon cable. And also&nbsp;a camera Module to the CSI2 directly.</p><p>Do you think it's feasible? Maybe using the spartan chip can be done both with your card. Doing slight modifications.&nbsp;</p><p>How much time did you take to make this project?</p>
+                </div>
+                <p id="comment-19583-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-19583">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+    
+    
+
+    <div id="j-discussion-8664" data-level="1" class="discussions-item" style="margin-left: 0px;">
+        <div class="discussions-item-image">
+
+            <a href="/hacker/27346">
+                <img src="https://cdn.hackaday.io/images/resize/100x100/default-avatar.png" alt="">
+            </a>
+
+            
+        </div>
+        <div class="discussions-item-body">
+            <small class="authorship">
+
+                <span class="identity-card" data-id="27346"><a href="/hacker/27346-pennylanemini">penny.lane.mini</a></span>
+
+                wrote <a class="gray-link" href="/project/364/instructions/discussion-8664"><span class='time-card' style='margin: 0' title='10 years ago'>09/01/2014 at 23:14</span></a>
+
+                <span id="comment-points-holder-8664" class="hide">
+                    &bull; <span id="comment-points-8664">
+                         point
+                    </span>
+                </span>
+
+            </small>
+            <div class="comment-content">
+                <div id="comment-8664-content">
+                    Hi just wondering if the board supports touch as well?
+<br/>
+<br/>I was hoping to use a mobile screen for an odroid
+                </div>
+                <p id="comment-8664-editor" class="hide"></p>
+            </div>
+            <p>
+                <span class="comment-actions" id="actions-8664">
+                    
+                    
+                    &nbsp;
+                </span>
+                <span class="delete-confirm hide"><span class="delete-q">Are you sure?</span> <a href="#" class="delete-yes">yes</a> | <a href="#" class="delete-no">no</a></span>
+            </p>
+        </div>
+    </div>
+
+    
+
+
+
+
+<script type="text/javascript">
+
+    var pageIndex = 0;
+
+
+</script>
+    </div>
+
+    
+
+</section>
+
+
+
+
+    </div>
+
+    <div id="footer" class="footer ">
+    
+        <a href="#header" class="back-to-top">
+            
+
+
+
+
+    <div class="icon icon-long-arrow-up">
+        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8.023 2.03 4.78 5.26h2.688v1.11h1.11V5.26h2.688L8.023 2.03zm-.555 5.505V8.92h1.11V7.534H7.47zm0 2.56v1.383h1.11v-1.384H7.47zm0 2.55v1.384h1.11v-1.385H7.47z" fill-rule="evenodd"/></svg>
+        
+    </div>
+
+ Going up?
+        </a>
+    
+    <p>
+        <a href="https://hackaday.com/about/">About Us</a>
+        <a href="mailto:projects-contact@hackaday.com">Contact Hackaday.io</a>
+        <a href="/project/37">Give Feedback</a> <a href="/tos">Terms of Use</a>
+        <a href="https://supplyframe.com/company/privacy">Privacy Policy</a>
+        <a
+            href="https://dev.hackaday.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >Hackaday API</a>
+    </p>
+    <p><a id="footer--home" href="/">&copy; 2024 Hackaday</a></p>
+
+    
+</div>
+
+
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47229708-1', 'auto');
+
+    var dimensionValue = 'nonregistered';
+    ga('set', 'dimension1', dimensionValue);
+    ga('require', 'displayfeatures');
+
+    ga('send', 'pageview');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9XKDJZELWD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9XKDJZELWD');
+</script>
+<script>
+    var csrftoken = '5C4LyWZw-HjU5ZSYXm5M36zHMzPH6UNzEWkE';
+</script>
+
+
+<img
+    src="//analytics.supplyframe.com/trackingservlet/impression?action=pageImpression&amp;zone=HIO_instructions&amp;extra=logged%3Dfalse%7ChaveAccountCookie%3D0%7C&amp;ab=undefined"
+    alt=""
+    class="sf-impression"
+/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    <script src="//cdn.hackaday.io/build/OkhhCeSBz5ZL%2FBE4f7QZBTswUbzMyssop5H1caXZkXKImKPN7f%2FCv0BjjjDWy%2BlHLlwzkG%2BAO%2B13Ufu%2FK5x47KlMR6xhx%2BAjXWd%2FfiD%2BqVRI00RZT%2BQ0pP5u%2BAWuViWA5YM41y3bo5K04ZL8DsWjKgFlyXCLwHSPRqk5G5AAuzq3Yapu3XNQwk8Khn0vfT9J4DOBhK5iTzT%2F5gA8v1nzQizT3AMhN%2F1uhCOTdchWnVOi9svdVH6KED%2BHTo3gUyv%2B1LHMdzX%2BcoSiKJgt%2FgHYmSyBp2QrSFOt98wrDzJ2o%2Fy1v8YWkS4IgmrZKeuErRk0x6avoojupJ6VLUUIzuNKGBDqNo8iqwUmaS8yc2q1hC2icDrlZv2rtGreE8i23OZ3IhfDAM3qPQpgExdUJ1Pbf9BMjACRPQJ4ZujCoPOZXkW4UNQW%2FRAj%2Fa%2Fr8R5IlaVZ%2BiOrWwNnJU3rBzAGcN68U38zuwJ1X4peRnvXv%2Fse1fYTBHH%2BU4YfAWsG23X3E6Fs0CGnXXvSiG%2F9%2F3TbqHICho%2BcS46CaKZeHq%2FnvNQ%2BnSpglvg6HzYZiru4lk61MyBR-0.172.1.js" ></script>
+</body>
+</html>
